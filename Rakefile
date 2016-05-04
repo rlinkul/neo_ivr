@@ -5,7 +5,7 @@ require 'neography/tasks'
 
 desc "One time task to setup on Heroku"
 task :create do
-  sh "bundle exec heroku create neo-ivr"
+  sh "bundle exec heroku create rl-t1"
   sh "bundle exec heroku config:set TWILIO_SID=" + ENV["TWILIO_SID"]
   sh "bundle exec heroku config:set TWILIO_TOKEN=" + ENV["TWILIO_TOKEN"]
   sh "git push heroku master"
