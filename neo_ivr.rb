@@ -37,7 +37,7 @@ get "/" do
       r.Say "To repeat this message press 9", :voice => "alice"
     end
     r.Say "Sorry, I didn\"t get your response.", :voice => "alice"
-    r.Play "http://neo-ivr.herokuapp.com/" + "hello.mp3"
+    r.Play "http://rl-t1.herokuapp.com/" + "hello.mp3"
     r.Redirect "/", :method => "GET"
   end
 
@@ -74,7 +74,7 @@ post "/billing" do
       r.Say "to repeat this message press 9", :voice => "alice"
     end
     r.Say "Sorry, I didn\"t get your response.", :voice => "alice"
-    r.Play "http://neo-ivr.herokuapp.com/" + "hello.mp3"
+    r.Play "http://rl-t1.herokuapp.com/" + "hello.mp3"
     r.Redirect "/billing"
   end  
   response.text  
@@ -96,15 +96,15 @@ post "/billing-input" do
         r.Redirect "/", :method => "GET"
       when "1"
         #payment
-        r.Play "http://neo-ivr.herokuapp.com/" + "what.mp3"
+        r.Play "http://rl-t1.herokuapp.com/" + "what.mp3"
         r.Hangup
       when "2"
         #address
-        r.Play "http://neo-ivr.herokuapp.com/" + "bunk.mp3"
+        r.Play "http://rl-t1.herokuapp.com/" + "bunk.mp3"
         r.Hangup        
       when "3"
         #other_billing
-        r.Play "http://neo-ivr.herokuapp.com/" + "leaf.mp3"
+        r.Play "http://rl-t1.herokuapp.com/" + "leaf.mp3"
         r.Hangup        
       when "9"
         r.Redirect "/billing"
@@ -127,7 +127,7 @@ post "/maintenance" do
       r.Say "to repeat this message press 9", :voice => "alice"
     end
     r.Say "Sorry, I didn\"t get your response.", :voice => "alice"
-    r.Play "http://neo-ivr.herokuapp.com/" + "hello.mp3"
+    r.Play "http://rl-t1.herokuapp.com/" + "hello.mp3"
     r.Redirect "/maintenance"
   end  
   response.text  
@@ -149,15 +149,15 @@ post "/maintenance-input" do
         r.Redirect "/", :method => "GET"
       when "1"
         #heat
-        r.Play "http://neo-ivr.herokuapp.com/" + "awesome.mp3"
+        r.Play "http://rl-t1.herokuapp.com/" + "awesome.mp3"
         r.Hangup        
       when "2"
         #plumbing
-        r.Play "http://neo-ivr.herokuapp.com/" + "misbehave.mp3"
+        r.Play "http://rl-t1.herokuapp.com/" + "misbehave.mp3"
         r.Hangup        
       when "3"
         #other_maintenance
-        r.Play "http://neo-ivr.herokuapp.com/" + "nopower.mp3"
+        r.Play "http://rl-t1.herokuapp.com/" + "nopower.mp3"
         r.Hangup        
       when "9"
         r.Redirect "/maintenance"
@@ -171,7 +171,7 @@ end
 post "/representative" do
   add_event(request, "/representative")
   response = Twilio::TwiML::Response.new do |r|
-    r.Play "http://neo-ivr.herokuapp.com/" + "theme.mp3"
+    r.Play "http://rl-t1.herokuapp.com/" + "theme.mp3"
     r.Hangup    
   end
   response.text
@@ -181,7 +181,7 @@ post "/not_implemented" do
   add_event(request, "/not_implemented")
   response = Twilio::TwiML::Response.new do |r|
     r.Say "I am sorry, that feature has not been implemented yet.", :voice => "alice"
-    r.Play "http://neo-ivr.herokuapp.com/" + "baby.mp3"
+    r.Play "http://rl-t1.herokuapp.com/" + "baby.mp3"
     r.Hangup    
   end
   response.text
